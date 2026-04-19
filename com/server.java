@@ -1,4 +1,4 @@
-
+package com;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -6,10 +6,13 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
+// import java.lang.Runnable;
 
-public class start {
-    public static void main(String[] args) {
-        try (ServerSocket serverSocket = new ServerSocket(8888)) {
+public class server {
+ 
+
+    public void main(int port, String[] args) {
+        try (ServerSocket serverSocket = new ServerSocket(port)) {
             System.out.println("Server started!");
             
             while (true) {
@@ -23,7 +26,7 @@ public class start {
                      PrintWriter output = new PrintWriter(socket.getOutputStream())) {
 
                     // ждем первой строки запроса
-                    while (!input.ready()) ;
+                    while (!input.ready());
 
                     // считываем и печатаем все что было отправлено клиентом
                     System.out.println();
@@ -35,7 +38,7 @@ public class start {
                     output.println("HTTP/1.1 200 OK");
                     output.println("Content-Type: text/html; charset=utf-8");
                     output.println();
-                    output.println("<p>Привет всем!</p>");
+                    output.println("<p>Hi jocker!</p>");
                     output.flush();
                     
                     // по окончанию выполнения блока try-with-resources потоки, 
