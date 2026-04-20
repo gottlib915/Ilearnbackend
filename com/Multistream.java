@@ -21,7 +21,7 @@ public class Multistream {
                 // ожидаем подключения
                 Socket socket = serverSocket.accept();
                 System.out.println("Client connected!");
-                new Thread(ClientHandler(socket)).start();
+                new Thread(new ClientHandshake(socket)).start();
             }   
     
     } catch (IOException ex) {

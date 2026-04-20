@@ -50,4 +50,4 @@ public class server {
             ex.printStackTrace();
         }
     }
-}
+};

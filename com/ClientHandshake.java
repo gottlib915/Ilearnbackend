@@ -8,10 +8,10 @@ import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 
 
-public class ClientHandler implements Runnable {
+public class ClientHandshake implements Runnable {
     private final Socket socket;
 
-    ClientHandler(Socket socket) {
+    ClientHandshake(Socket socket) {
         this.socket = socket;
     }
 
@@ -51,4 +51,4 @@ public class ClientHandler implements Runnable {
         //     ex.printStackTrace();
         // }
     }
-}
+};
